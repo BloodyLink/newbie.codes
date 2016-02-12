@@ -1,0 +1,48 @@
+<?php
+	include('conectar-bd.php');
+	$dato = mysql_query('SELECT descripcion FROM areas');
+	$areas = mysql_fetch_array($dato);
+	$dato1 = mysql_query('SELECT * FROM usuarios');
+	$usuarios = mysql_fetch_array($dato1);
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Usuarios</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+<a href="index.php">Volver a index</a><br />
+<div id="contenedor">
+<div id="nuevoUsuario">
+<form method="post" action="ingresar-usuarios.php" id="form-usuarios">
+	<table>
+		<tr><th colspan="2">Nuevo usuario</th></tr>
+		<tr><td>Rut</td><td><input type="text" id="txtRut" name="txtRut" /></td></tr>
+		<tr><td>Nombre</td><td><input type="text" id="txtNombre" name="txtNombre" /></td></tr>
+		<tr><td>Apellido</td><td><input type="text" id="txtApellido" name="txtApellido" /></td></tr>
+		<tr><td>Area</td><td>
+		<select name="slArea">
+		<option>Seleccione:</option>
+		<?php do{ ?>
+			<option><?php echo $areas['descripcion']; ?></option>
+		<?php }while($areas = mysql_fetch_array($dato)); ?>
+		</select>
+		</td></tr>
+		<tr><td></td><td><input type="submit" name="btnNuevoUsuario" id="btnNuevoUsuario" value="Registrar" /></td></tr>
+	</table>
+</form>
+</div>
+<div id="usuarios">
+<table class="tablaMuestra">
+	<tr><th>Rut</th><th>Nombre</th><th>Apellido</th><th>Area</th><th></th></tr>
+	<?php do{ ?>
+	<tr><td><?php echo $usuarios['rut']; ?></td><td><?php echo $usuarios['nombre']; ?></td><td><?php echo $usuarios['apellido']; ?></td><td><?php $usuarios['area']; ?></td><td>x</td></tr>
+	<?php }while($usuarios = mysql_fetch_array($dato1)); ?>
+</table>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body{
+background-color:#FFFFFF;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+a{
+	color:#000000;
+}
+
+a:hover{
+	color:#666666;
+}
+
+#contenedor{
+	width:1024px;
+	margin:0 auto;
+}
+.tablaMuestra th{
+	background-color:#000000;
+	padding-left:10px;
+	color:#FFFFFF;
+}
+
+.tablaMuestra tr{
+	background-color:#CCCCCC;
+	padding-right:10px;
+}
+.tablaMuestra{
+	font-size:10px;
+	color:#000000;
+}
+img{border:0;}
+
+#formArea{
+	float:left;
+}
+
+#agregaTipo{
+	float:left;
+}
+
+textarea{
+	resize:none;
+}
+
+.alert{
+	color:#D52626;
+}
+
+.listaSelect{
+	height:150px;
+	width:250px;
+	float:left;
+}
+
+.prioritario{
+	font-weight:bold;
+}
+
+.edicionUser{
+	position:relative;
+	overflow:hidden;
+	height:auto;
+	width:800px;
+}
+
+#listaUsuarios{
+	height:150px;
+	width:500px;
+	float:left;
+}
+.popup{
+	background-color:#000000;
+	position:absolute;
+	z-index:500;
+	margin-top:10%;
+	margin-left:10%;
+	overflow:hidden;
+	height:0px;
+	width:0px;
+	z-index:3;
+	position:absolute;
+	display:none;
+	color:#FFFFFF;
+}
+
+#luces{
+	position:absolute;
+	z-index:-1;
+	height:100%;
+	width:100%;
+	visibility:hidden;
+	'background-image:url('images/sinluces.png');
+
+}
+
+#divTablaObservaciones{
+	float:left;
+	background-color:#151515;
+	width:400px;
+	height:300px;
+	overflow-y:scroll;
+}
+#divTablaObservacionesUser{
+	float:left;
+	background-color:#151515;
+	width:700px;
+	height:300px;
+	overflow-y:scroll;
+}
+
+#divAgregarObservacion{
+	float:left;
+}
+
+#observaciones{
+	width:380px;
+}
+
+#nuevoUsuario{
+	background-color:#CCCCCC;
+	'display:none;
+}

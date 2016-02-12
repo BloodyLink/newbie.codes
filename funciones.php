@@ -1,0 +1,1 @@
+<?php	function editable($user,$tipo,$area){		if($tipo == "1"){			echo "<input type='text' value='" . $user . "'/>";		}else{			echo "<input type='text' value='" . $user . "'/>";			echo "<input type='text' value='" . $area . "'/>";		}	}?>
